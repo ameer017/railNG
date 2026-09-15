@@ -21,6 +21,10 @@ export const metadata: Metadata = {
   },
   description:
     "Book Lagos–Ibadan and Abuja–Kaduna train tickets. Passenger booking and operator console.",
+  icons: {
+    icon: "/icon.svg",
+    apple: "/apple-icon.svg",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
