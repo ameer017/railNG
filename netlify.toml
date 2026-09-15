@@ -7,10 +7,3 @@
 
 [functions]
   included_files = ["node_modules/.prisma/client/**", "node_modules/@prisma/client/**"]
-
-# Next.js requests /_next/static/*; publishing .next serves those files at /static/*.
-[[redirects]]
-  from = "/_next/static/*"
-  to = "/static/:splat"
-  status = 200
-  force = true

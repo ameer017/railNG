@@ -16,7 +16,7 @@ npm run dev
 
 Local Postgres is `postgresql://railng:railng@localhost:5432/railng`. SQLite will not work on Netlify.
 
-Open [http://localhost:3000](http://localhost:3000).
+Open [http://localhost:3000](http://localhost:3000). Live site: [https://rail-ng.netlify.app](https://rail-ng.netlify.app).
 
 ## Seed logins
 
@@ -40,14 +40,14 @@ Checkout calls `paymentProvider.charge()` in `src/lib/payments.ts`. v1 uses `Moc
 ## Deploy on Netlify
 
 1. Create a free [Neon](https://neon.tech) Postgres database. Copy the connection string (`sslmode=require`).
-2. Import [ameer017/railNG](https://github.com/ameer017/railNG) in Netlify. Framework detection should set **Build command** `npm run build` and **Publish directory** `.next` (also in `netlify.toml`).
+2. In Netlify, **Import from Git** (or Site configuration → Build & deploy → Connect repository) and pick [ameer017/railNG](https://github.com/ameer017/railNG), branch `main`. Framework detection should set **Build command** `npm run build` and **Publish directory** `.next` (also in `netlify.toml`). After that, every push to `main` deploys — no CLI needed.
 3. Site settings → Environment variables:
 
 | Name | Value |
 | --- | --- |
 | `DATABASE_URL` | Neon connection string |
 | `AUTH_SECRET` | `openssl rand -base64 32` |
-| `AUTH_URL` | `https://<your-site>.netlify.app` |
+| `AUTH_URL` | `https://rail-ng.netlify.app` |
 
 4. Trigger a deploy. The build runs `prisma generate` and `prisma db push` (schema only, no seed wipe).
 5. Seed once from your machine (this recreates the demo operator/passenger and timetable):
