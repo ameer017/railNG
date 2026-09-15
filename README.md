@@ -1,6 +1,7 @@
 # RailNG
 
-Nigeria-focused train ticketing: passenger booking plus an operator console. Lagos–Ibadan and Abuja–Kaduna are seeded with NGN fares and WAT times. Payments are mocked for now.
+A specialized train ticketing platform for Nigeria, providing seamless passenger booking alongside an operator management console. Pre-configured with real routes including Lagos–Ibadan and Abuja–Kaduna, featuring localized NGN pricing, West Africa Time scheduling, and a mocked payment gateway for end-to-end testing
+
 
 ## Setup
 
